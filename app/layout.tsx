@@ -8,9 +8,14 @@ import { Toaster } from "sonner"; // <-- استيراد مكتبة التنبي�
 
 const inter = Inter({ subsets: ["latin"] });
 
+// تم تحديث الـ Metadata هنا
 export const metadata: Metadata = {
-  title: "Nawar Subscriptions Reminder",
+  title: "Nawar Subscription Manager",
   description: "Smart app to track subscriptions.",
+  icons: {
+    icon: "/logo.png", // أيقونة المتصفح
+    apple: "/logo.png", // أيقونة الآيفون
+  },
 };
 
 export default function RootLayout({
