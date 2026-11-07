@@ -19,7 +19,8 @@ import { useLanguage } from "../context/LanguageContext";
 export default function LoginView() {
   const router = useRouter();
   const { theme, setTheme } = useTheme();
-  const { lang, toggleLang } = useLanguage();
+  const { lang, toggleLang, t } = useLanguage(); // أضفنا t هنا
+
   const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -71,15 +72,12 @@ export default function LoginView() {
   };
 
   return (
-    // الخلفية العامة (تتغير حسب الوضع)
     <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-[#0b1120] p-4 transition-colors duration-300 relative overflow-hidden">
-      {/* تأثيرات الإضاءة في الخلفية للوضع الداكن */}
+      {/* تأثيرات الإضاءة في الخلفية */}
       <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-teal-500/20 rounded-full blur-[120px] dark:block hidden pointer-events-none"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-500/20 rounded-full blur-[120px] dark:block hidden pointer-events-none"></div>
 
-      {/* بطاقة تسجيل الدخول (Glassmorphism) */}
       <div className="bg-white/90 dark:bg-[#1e293b]/60 backdrop-blur-xl p-8 md:p-10 rounded-3xl shadow-2xl dark:shadow-[0_0_40px_rgba(45,212,191,0.1)] border border-gray-200 dark:border-slate-700/50 w-full max-w-md relative z-10">
-        {/* اللوغو والعنوان */}
         <div className="text-center mb-8 flex flex-col items-center">
           <img
             src="/logo.png"
@@ -115,7 +113,7 @@ export default function LoginView() {
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                     className="w-full bg-gray-50 dark:bg-[#0f172a]/50 border border-gray-300 dark:border-slate-600 rounded-xl py-2.5 pr-10 pl-3 text-gray-900 dark:text-white focus:outline-none focus:border-teal-500 transition-colors"
-                    placeholder="الاسم الأول"
+                    placeholder={t("firstName")}
                   />
                 </div>
                 <div className="relative">
@@ -125,7 +123,7 @@ export default function LoginView() {
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
                     className="w-full bg-gray-50 dark:bg-[#0f172a]/50 border border-gray-300 dark:border-slate-600 rounded-xl py-2.5 px-3 text-gray-900 dark:text-white focus:outline-none focus:border-teal-500 transition-colors"
-                    placeholder="الكنية"
+                    placeholder={t("lastName")}
                   />
                 </div>
               </div>
@@ -140,7 +138,7 @@ export default function LoginView() {
                     value={country}
                     onChange={(e) => setCountry(e.target.value)}
                     className="w-full bg-gray-50 dark:bg-[#0f172a]/50 border border-gray-300 dark:border-slate-600 rounded-xl py-2.5 pr-10 pl-3 text-gray-900 dark:text-white focus:outline-none focus:border-teal-500 transition-colors"
-                    placeholder="البلد"
+                    placeholder={t("country")}
                   />
                 </div>
                 <div className="relative">
@@ -153,7 +151,7 @@ export default function LoginView() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     className="w-full bg-gray-50 dark:bg-[#0f172a]/50 border border-gray-300 dark:border-slate-600 rounded-xl py-2.5 pr-10 pl-3 text-gray-900 dark:text-white focus:outline-none focus:border-teal-500 transition-colors"
-                    placeholder="الهاتف"
+                    placeholder={t("phone")}
                   />
                 </div>
               </div>
@@ -171,7 +169,7 @@ export default function LoginView() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full bg-gray-50 dark:bg-[#0f172a]/50 border border-gray-300 dark:border-slate-600 rounded-xl py-3 pr-10 pl-4 text-gray-900 dark:text-white focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all"
-              placeholder="you@example.com"
+              placeholder={t("email")}
             />
           </div>
 
@@ -186,7 +184,7 @@ export default function LoginView() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full bg-gray-50 dark:bg-[#0f172a]/50 border border-gray-300 dark:border-slate-600 rounded-xl py-3 pr-10 pl-4 text-gray-900 dark:text-white focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all"
-              placeholder="••••••••"
+              placeholder={t("password")}
               minLength={6}
             />
           </div>
@@ -199,9 +197,9 @@ export default function LoginView() {
             {loading ? (
               <Loader2 className="animate-spin" size={20} />
             ) : isLogin ? (
-              "تسجيل الدخول"
+              t("login")
             ) : (
-              "إنشاء حساب"
+              t("signup")
             )}
           </button>
         </form>
@@ -209,7 +207,7 @@ export default function LoginView() {
         <div className="mt-6 flex items-center justify-between">
           <hr className="w-full border-gray-300 dark:border-slate-700" />
           <span className="px-3 text-sm text-gray-500 dark:text-slate-500">
-            أو
+            {t("or")}
           </span>
           <hr className="w-full border-gray-300 dark:border-slate-700" />
         </div>
@@ -237,16 +235,15 @@ export default function LoginView() {
               d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
             />
           </svg>
-          الدخول باستخدام Google
+          {t("googleLogin")}
         </button>
 
-        {/* شريط سفلي للتبديل بين اللغات والوضع الليلي */}
         <div className="mt-8 pt-4 border-t border-gray-200 dark:border-slate-700/50 flex items-center justify-between text-sm">
           <button
             onClick={() => setIsLogin(!isLogin)}
-            className="text-gray-500 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-400 transition-colors font-medium"
+            className="text-gray-500 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-400 transition-colors font-medium text-right max-w-[60%]"
           >
-            {isLogin ? "إنشاء حساب جديد" : "لديك حساب؟ سجل دخولك"}
+            {isLogin ? t("noAccount") : t("hasAccount")}
           </button>
 
           <div className="flex items-center gap-4">

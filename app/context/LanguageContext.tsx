@@ -74,8 +74,6 @@ const translations = {
     cancelSub: "إلغاء الاشتراك",
     reactivate: "إعادة تفعيل",
     viewList: "عرض القائمة",
-
-    // الكلمات الجديدة المضافة الآن
     category: "التصنيف",
     catEnt: "ترفيه",
     catProd: "عمل وإنتاجية",
@@ -84,6 +82,22 @@ const translations = {
     subAdded: "تمت إضافة الاشتراك بنجاح",
     subUpdated: "تم تحديث الاشتراك بنجاح",
     subDeleted: "تم حذف الاشتراك",
+
+    // الكلمات الجديدة المضافة الآن (لصفحات الدخول والتسجيل)
+    welcomeBack: "مرحباً بعودتك! سجل دخولك للمتابعة",
+    createAccountDesc: "أنشئ حساباً جديداً لإدارة اشتراكاتك",
+    firstName: "الاسم الأول",
+    lastName: "الكنية",
+    country: "البلد",
+    phone: "رقم الهاتف (اختياري)",
+    email: "البريد الإلكتروني",
+    password: "كلمة المرور",
+    login: "تسجيل الدخول",
+    signup: "إنشاء حساب",
+    or: "أو",
+    googleLogin: "الدخول باستخدام Google",
+    noAccount: "ليس لديك حساب؟ أنشئ حساباً جديداً",
+    hasAccount: "لديك حساب بالفعل؟ سجل دخولك",
   },
   en: {
     dashboard: "Dashboard",
@@ -150,8 +164,6 @@ const translations = {
     cancelSub: "Cancel Subscription",
     reactivate: "Reactivate",
     viewList: "View List",
-
-    // الكلمات الجديدة المضافة الآن
     category: "Category",
     catEnt: "Entertainment",
     catProd: "Productivity",
@@ -160,6 +172,22 @@ const translations = {
     subAdded: "Subscription added successfully",
     subUpdated: "Subscription updated successfully",
     subDeleted: "Subscription deleted",
+
+    // الكلمات الجديدة المضافة الآن (لصفحات الدخول والتسجيل)
+    welcomeBack: "Welcome back! Sign in to continue",
+    createAccountDesc: "Create a new account to manage your subscriptions",
+    firstName: "First Name",
+    lastName: "Last Name",
+    country: "Country",
+    phone: "Phone (Optional)",
+    email: "Email Address",
+    password: "Password",
+    login: "Sign In",
+    signup: "Create Account",
+    or: "Or",
+    googleLogin: "Continue with Google",
+    noAccount: "Don't have an account? Sign up",
+    hasAccount: "Already have an account? Sign in",
   },
 };
 
