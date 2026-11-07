@@ -4,11 +4,11 @@ import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
 import { AuthProvider } from "./context/AuthContext";
 import { ThemeProvider } from "./components/ThemeProvider";
-import { Toaster } from "sonner"; // <-- استيراد مكتبة التنبيهات
+import { SidebarProvider } from "./context/SidebarContext"; // <-- تمت الإضافة
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// تم تحديث الـ Metadata هنا
 export const metadata: Metadata = {
   title: "Nawar Subscription Manager",
   description: "Smart app to track subscriptions.",
@@ -29,9 +29,12 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <AuthProvider>
             <LanguageProvider>
-              {children}
-              {/* مكتبة التنبيهات */}
-              <Toaster position="bottom-right" richColors />
+              <SidebarProvider>
+                {" "}
+                {/* <-- تمت الإضافة */}
+                {children}
+                <Toaster position="bottom-right" richColors />
+              </SidebarProvider>
             </LanguageProvider>
           </AuthProvider>
         </ThemeProvider>
