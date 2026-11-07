@@ -43,8 +43,6 @@ const translations = {
     cancelled: "الملغاة",
     editProfile: "إعدادات الملف الشخصي",
     logout: "تسجيل الخروج",
-
-    // كلمات سابقة
     subManager: "إدارة الاشتراكات",
     subsList: "قائمة الاشتراكات",
     sampleData: "بيانات تجريبية",
@@ -82,8 +80,6 @@ const translations = {
     subAdded: "تمت إضافة الاشتراك بنجاح",
     subUpdated: "تم تحديث الاشتراك بنجاح",
     subDeleted: "تم حذف الاشتراك",
-
-    // الكلمات الجديدة المضافة الآن (لصفحات الدخول والتسجيل)
     welcomeBack: "مرحباً بعودتك! سجل دخولك للمتابعة",
     createAccountDesc: "أنشئ حساباً جديداً لإدارة اشتراكاتك",
     firstName: "الاسم الأول",
@@ -98,6 +94,9 @@ const translations = {
     googleLogin: "الدخول باستخدام Google",
     noAccount: "ليس لديك حساب؟ أنشئ حساباً جديداً",
     hasAccount: "لديك حساب بالفعل؟ سجل دخولك",
+
+    // الكلمة الجديدة المضافة الآن
+    addFirstSubDesc: "أضف اشتراكك الأول لتبدأ في تتبع مصاريفك.",
   },
   en: {
     dashboard: "Dashboard",
@@ -133,8 +132,6 @@ const translations = {
     cancelled: "Cancelled",
     editProfile: "Profile Settings",
     logout: "Log out",
-
-    // كلمات سابقة
     subManager: "Subscription Manager",
     subsList: "Subscriptions List",
     sampleData: "Sample data",
@@ -172,8 +169,6 @@ const translations = {
     subAdded: "Subscription added successfully",
     subUpdated: "Subscription updated successfully",
     subDeleted: "Subscription deleted",
-
-    // الكلمات الجديدة المضافة الآن (لصفحات الدخول والتسجيل)
     welcomeBack: "Welcome back! Sign in to continue",
     createAccountDesc: "Create a new account to manage your subscriptions",
     firstName: "First Name",
@@ -188,6 +183,10 @@ const translations = {
     googleLogin: "Continue with Google",
     noAccount: "Don't have an account? Sign up",
     hasAccount: "Already have an account? Sign in",
+
+    // الكلمة الجديدة المضافة الآن
+    addFirstSubDesc:
+      "Add your first subscription to start tracking your expenses.",
   },
 };
 

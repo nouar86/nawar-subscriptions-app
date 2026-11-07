@@ -249,8 +249,9 @@ function SubscriptionListContent() {
                   {t("noSubs")}
                 </h3>
                 <p className="text-gray-500 dark:text-slate-400 mb-6">
-                  أضف اشتراكك الأول لتبدأ في تتبع مصاريفك.
+                  {t("addFirstSubDesc")}
                 </p>
+
                 {statusFilter !== "cancelled" && (
                   <button
                     onClick={() => setIsAddModalOpen(true)}
